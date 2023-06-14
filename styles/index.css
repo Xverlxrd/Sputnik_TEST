@@ -3,6 +3,10 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+#root{
+    width: 100%;
 }
 
 /* Reset and base styles  */

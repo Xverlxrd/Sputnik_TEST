@@ -1,9 +1,19 @@
 /*Styles for Modal*/
 .modal__container{
     width: 500px;
-    display: flex;
     flex-direction: column;
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-color: white;
 }
+.modal__container.modal__container--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
 .modal__start{
     display: flex;
     justify-content: space-between;
@@ -44,6 +54,10 @@
     font-size: 15px;
     color: dodgerblue;
     font-weight: 500;
+    cursor: pointer;
+}
+.modal__links_item:hover{
+    text-decoration: underline;
 }
 .modal__support{
     padding-top: 160px;
@@ -64,4 +78,5 @@
 .modal__exit{
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }

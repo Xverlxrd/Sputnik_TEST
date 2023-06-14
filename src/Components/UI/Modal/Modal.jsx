@@ -4,27 +4,44 @@ import MyInput from "@src/Components/UI/MyInput/MyInput";
 import MyButton from "@src/Components/UI/MyButton/MyButton";
 import { Icon } from '@iconify/react';
 
-const Modal = () => {
+const Modal = ({isModal, setIsModal}) => {
     return (
-        <div className={'modal__container'}>
-
+        <div
+            onClick={e => e.stopPropagation()}
+            className={`modal__container ${isModal ? 'modal__container--visible' : ''}`}
+        >
 
             <div className="modal__start">
                 <div className={'modal__text'}>
                     <h1 className={'modal__text_title'}>Web</h1>
                     <p className={'modal__text_other'}>App</p>
                 </div>
-                <Icon className={'modal__exit'} icon="ph:x-bold" color="blue" />
+                <Icon
+                    onClick={e => setIsModal(false)}
+                    className={'modal__exit'}
+                    icon="ph:x-bold"
+                    color="blue"
+                />
             </div>
 
             <h3 className={'modal__welcome'}>Войдите в свой профиль</h3>
 
             <div className="modal__inputs">
-                <MyInput title={'Логин'} type={'email'}/>
-                <MyInput title={'Пароль'} type={'password'}/>
+                <MyInput
+                    title={'Логин'}
+                    type={'email'}
+                />
+
+                <MyInput
+                    title={'Пароль'}
+                    type={'password'}
+                />
             </div>
 
-            <MyButton title={'войти'}/>
+            <MyButton
+                type={'submit'}
+                title={'войти'}
+            />
 
             <ul className="modal__links">
                 <li className="modal__links_item">Я забыл пароль</li>

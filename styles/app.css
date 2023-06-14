@@ -1,8 +1,8 @@
-.page__container{
-    max-width: 1440px;
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
+.page__container {
+    width: 100%;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    display: flex;
+
 }
