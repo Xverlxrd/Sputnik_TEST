@@ -1,0 +1,67 @@
+/*Styles for Modal*/
+.modal__container{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.modal__start{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal__text{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+.modal__text_title{
+    font-weight: 700;
+    font-size: 40px;
+}
+.modal__text_other{
+    font-size: 40px;
+    font-weight: 300;
+}
+.modal__welcome{
+    padding-top: 80px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.modal__inputs{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding-bottom: 50px;
+}
+.modal__links{
+    display: flex;
+    flex-direction: column;
+    padding-top: 55px;
+    row-gap: 30px;
+}
+.modal__links_item{
+    font-size: 15px;
+    color: dodgerblue;
+    font-weight: 500;
+}
+.modal__support{
+    padding-top: 160px;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+
+}
+.modal__support_img{
+    width: 20px;
+    height: 20px;
+    color: rgb(187,194,202);
+}
+.modal__support_text{
+    font-size: 15px;
+    color: rgb(187,194,202);
+}
+.modal__exit{
+    width: 50px;
+    height: 50px;
+}
