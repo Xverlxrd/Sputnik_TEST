@@ -1,10 +1,8 @@
 const path = require('path');
 const HWP = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const CWP = require('copy-webpack-plugin');
 const MCEP = require('mini-css-extract-plugin');
-const OCAP = require('optimize-css-assets-webpack-plugin')
-const TWP = require('terser-webpack-plugin')
+
 
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -60,16 +58,11 @@ module.exports = {
     plugins: [
         new HWP({
             template: './public/index.html',
-            // title: 'Sputnik App',
             minify: {
                 collapseWhitespace: !isDev
             }
         }),
         new CleanWebpackPlugin(),
-        // new CWP([
-        //     from: path.resolve(__dirname, './src/favicon.ico'),
-        //     to: path.resolve(__dirname, './dist')
-        // ]),
         new MCEP({
             filename: '[name].[contenthash].css'
         })

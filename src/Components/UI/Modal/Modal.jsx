@@ -12,7 +12,15 @@ const Modal = ({
                    setIsPassModal,
                    isPassModal
 }) => {
-    
+
+    const closeLinksModal = () => {
+        if(isRegModal){
+            setIsRegModal(false)
+        }
+        else{
+            setIsPassModal(false)
+        }
+    }
 
     return (
 
@@ -28,7 +36,7 @@ const Modal = ({
                         <p className={'modal__text_other'}>App</p>
                     </div>
                     <Icon
-                        onClick={e => setIsModal(false)}
+                        onClick={e => !isPassModal && !isRegModal && setIsModal(false)}
                         className={'modal__exit'}
                         icon="ph:x-bold"
                         color="blue"
@@ -77,7 +85,7 @@ const Modal = ({
                 className={`reg__modal ${isRegModal ? 'reg__modal--visible' : ''}`}
             >
                 <Icon
-                    onClick={e => isRegModal ? setIsRegModal(false): setIsPassModal(false)}
+                    onClick={e => closeLinksModal()}
                     className={'links__modal_exit'}
                     icon="ph:x-bold"
                     color="red"
@@ -92,7 +100,7 @@ const Modal = ({
                 className={`pass__modal ${isPassModal ? 'pass__modal--visible' : ''}`}
             >
                 <Icon
-                    onClick={e => isRegModal ? setIsRegModal(false): setIsPassModal(false)}
+                    onClick={e => closeLinksModal()}
                     className={'links__modal_exit'}
                     icon="ph:x-bold"
                     color="red"
