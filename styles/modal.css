@@ -80,3 +80,54 @@
     height: 50px;
     cursor: pointer;
 }
+
+/*Styles for reg__modal*/
+.reg__modal{
+    width: 500px;
+    border: 1px solid blue;
+    row-gap: 20px;
+    flex-direction: column;
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    height: 300px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+.reg__modal.reg__modal--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*Styles for pass__modal*/
+
+.pass__modal{
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border: 1px solid blue;
+}
+.pass__modal.pass__modal--visible {
+    opacity: 1;
+    visibility: visible;
+}
+.links__modal_exit{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}

@@ -5,14 +5,29 @@ import Modal from "@src/Components/UI/Modal/Modal";
 
 const App = () => {
     const [ isModal, setIsModal ] = React.useState(false)
+    const [ isRegModal, setIsRegModal ] = React.useState(false)
+    const [ isPassModal, setIsPassModal] = React.useState(false)
 
     const showModalByPress = (e) => {
         e.stopPropagation()
         setIsModal(true)
     }
+    const closeModals = () => {
+      if(isModal){
+          if(isRegModal){
+              setIsRegModal(false)
+          }
+          else if(isPassModal){
+              setIsPassModal(false)
+          }
+          else if(!isPassModal && !isRegModal){
+              setIsModal(false)
+          }
+      }
+    }
     return (
         <div
-            onClick={e => setIsModal(false)}
+            onClick={e => closeModals()}
             className={'page__container'}
         >
             <MyButton
@@ -21,8 +36,13 @@ const App = () => {
             />
 
             <Modal
-                setIsModal={setIsModal}
+                isPassModal={isPassModal}
+                isRegModal={isRegModal}
                 isModal={isModal}
+
+                setIsRegModal={setIsRegModal}
+                setIsPassModal={setIsPassModal}
+                setIsModal={setIsModal}
             />
         </div>
     );
